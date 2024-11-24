@@ -28,8 +28,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AndroidApp1Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column (modifier = Modifier.padding(innerPadding)) {
                         TopImage()
                         ArticleTitle(
                             Title = stringResource(R.string.Title),
@@ -40,8 +38,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -65,32 +63,33 @@ fun TopImage(modifier: Modifier = Modifier){
 @Composable
 fun ArticleTitle(Title: String, FirstParagraph: String,
                  SecondParagraph: String,
-                 modifier: Modifier = Modifier){
-    Column(modifier = modifier, verticalArrangement =  Arrangement.Center){
-        Text(
-            text = Title,
-            fontSize = 25. sp,
-            lineHeight = 50. sp,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier.padding(start = 20.dp, top = 120.dp)
-        )
-        Text(
-            text = FirstParagraph,
-            fontSize = 20. sp,
-            lineHeight = 20. sp,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier.padding(start = 20.dp, top = 10.dp, end = 20.dp)
-        )
-        Text(
-            text = SecondParagraph,
-            fontSize = 20. sp,
-            lineHeight = 20. sp,
-            textAlign = TextAlign.Justify,
-            modifier = Modifier.padding(start = 20.dp, top = 50.dp, end = 20.dp)
-        )
+                 modifier: Modifier = Modifier) {
+        Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
+            Text(
+                text = Title,
+                fontSize = 25.sp,
+                lineHeight = 50.sp,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 20.dp, top = 120.dp)
+            )
+            Text(
+                text = FirstParagraph,
+                fontSize = 20.sp,
+                lineHeight = 20.sp,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 20.dp, top = 10.dp, end = 20.dp)
+            )
+            Text(
+                text = SecondParagraph,
+                fontSize = 20.sp,
+                lineHeight = 20.sp,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 20.dp, top = 50.dp, end = 20.dp)
+            )
 
+        }
     }
-}
+
 
 
 @Preview(showBackground = true, showSystemUi = true)
