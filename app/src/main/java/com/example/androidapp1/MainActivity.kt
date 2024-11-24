@@ -91,7 +91,6 @@ fun ArticleTitle(Title: String, FirstParagraph: String,
     }
 
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
